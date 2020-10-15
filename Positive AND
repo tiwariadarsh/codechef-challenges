@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long int n,t,i;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        if(n==1)
+            cout<<1<<endl;
+            
+        else if(n&(n-1)){
+            cout<<2<<" "<<3<<" "<<1<<" ";
+            for(i=4;i<=n;i++){
+                if(i&(i-1))
+                    cout<<i<<" ";
+                    
+                else{
+                    cout<<i+1<<" "<<i<<" ";
+                    i++;
+                }
+                    
+            }
+            cout<<endl;
+        }
+        
+        else
+            cout<<-1<<endl;
+    }
+    
+	return 0;
+}
