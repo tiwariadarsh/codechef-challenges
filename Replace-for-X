@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long int t,n,p,k,x,i,a[100000],j,flag;
+    cin>>t;
+    while(t--){
+        j=flag=0;
+        cin>>n>>x>>p>>k;
+        for(i=0;i<n;i++){
+            cin>>a[i];
+        }
+        sort(a,a+n);
+        for(i=0;i<n;i++){
+            if(a[i]==x){
+                    flag=1;
+                    break;
+                }
+        }
+        
+        if((a[p-1]<x && p<k) || (a[p-1]>x && p>k) )
+            cout<<-1<<endl;
+       
+        else{
+            if(!flag){
+            a[k-1]=x;
+            j++;
+            sort(a,a+n);
+            }
+        
+            if(a[p-1]==x)
+                cout<<0+j<<endl;
+                
+            else{
+                for(i=0;i<n-1;i++){
+                    if(p>i+1)
+                        if(a[i]==x && a[i+1]!=x){
+                            break;
+                    }
+                    
+                    if(p<i+1)
+                        if(a[i]==x){
+                            break;
+                    }
+                }
+                cout<<abs(i+1-p)+j<<endl;
+            }
+        }    
+    }
+	return 0;
+}
