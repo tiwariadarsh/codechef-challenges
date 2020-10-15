@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long int t,n,k,x,y,i,j;
+    cin>>t;
+    while(t--){
+        j=0;
+        cin>>n>>k>>x>>y;
+        i=x;
+        do{
+            i+=k;
+            if(i>n)
+                i=i%n;
+                
+            if(i==y){
+                j=1;
+                break;
+            }
+        }while(x!=i);
+        
+        if(j==1)
+            cout<<"YES"<<endl;
+            
+        else
+            cout<<"NO"<<endl;
+    }
+	return 0;
+}
