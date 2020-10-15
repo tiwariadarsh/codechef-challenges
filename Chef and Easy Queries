@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int n,k,t,i,j,a[100000];
+	cin>>t;
+	while(t--){
+	    j=0;
+	    cin>>n>>k;
+	    for(i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	    for(i=0;i<n;i++){
+	        if(i==(n-1)){
+	            if(a[i]>=k)
+	                j+=a[i]/k;
+	                
+	            else
+	                break;
+	        }
+	        else{
+	            if(a[i]>=k){
+	                a[i+1]+=(a[i]-k);
+	                j++;
+	            }    
+	            else
+	                break;
+	           
+	        }
+	    }
+	    cout<<j+1<<endl;
+	}
+	return 0;
+}
