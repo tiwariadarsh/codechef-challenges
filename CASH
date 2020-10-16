@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+int main(void) {
+	int t,i,j;
+	scanf("%d",&t);
+	for(i=0; i<t; i++){
+	    int n;
+       scanf("%d",&n);
+	    long int arr[n],sum=0,X=1000000000000,k;
+
+	    scanf("%ld",&k);
+	    for(j=0; j<n; j++){
+	        scanf("%ld",&arr[j]);
+	        sum=sum+arr[j];
+	    }
+	    for(j=0; j<=n; j++){
+	        long int x=0;
+	        long int s=0;
+	        for(int z=0; z<=j; z++){
+	            s=s+arr[z];
+	        }
+	        long int p;
+	        p=abs(k-((sum-s)%k));
+
+	        x=(s-p)%k;
+
+	        if(x>=0){if(x<X){X=x;}}
+
+	    }
+	    printf("%ld\n",X);
+	}
+	return 0;
+}
+
