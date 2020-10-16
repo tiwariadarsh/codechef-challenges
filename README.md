@@ -1,2 +1,2 @@
-# codechef-long-challenge
-October 2019 Long challenge solutions
+# codechef-challenge
+Upload Any Codechef Solution (It should be unique , Not duplicate entry).
