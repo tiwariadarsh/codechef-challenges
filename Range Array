@@ -1,0 +1,30 @@
+from sys import stdin as sin
+def aint():return int(input())
+def amap():return map(int,sin.readline().split())
+def alist():return list(map(int,sin.readline().split()))
+def astr():return input()
+
+
+
+for _ in range(aint()):
+    n = aint()
+    l = alist()
+    ans = 0
+    for i in range(n):
+        for j in range(i+1,n+1):
+            g = []
+            f = True
+            for e in range(i,j):
+                if l[e]>=i+1 and l[e]<=j:
+                    if g :
+                        if g[-1]<l[e]:
+                            g.append(l[e])
+                        else:
+                            f = False
+                            break
+                    else:
+                        g.append(l[e])
+            # print(g)
+            if f:
+                ans+=1
+    print(ans)
