@@ -1,7 +1,7 @@
 // ----------------------------- || ** Hacktober 2021 ** || -------------------------------
 /*
  * Author : Umesh Kumar
- * Date : 01/10/2021
+ * Date : 09/10/2021
  * Problem : https://www.codechef.com/OCT21C/problems/DIGITREM
  */
 #include <bits/stdc++.h>
